@@ -24,7 +24,7 @@ fn main() {
     let col_count = get_column_length(&lines[0]);
     println!("Column count = {}", col_count);
 
-    let r:usize = 3;
+    let r = (3 as usize, 1 as usize);
     let mut trail = Vec::<char>::new(); 
 
     for (i, line) in lines.iter().enumerate() {
@@ -32,7 +32,7 @@ fn main() {
            continue;
        }
 
-       trail.push(line.chars().nth(r * i % col_count).unwrap());
+       trail.push(line.chars().nth(r.0 * i % col_count).unwrap());
     }
 
     println!("{:?}", trail);
